@@ -20,21 +20,20 @@ select your project with the command below
     gcloud config set project PROJECT_ID
 
 
-
-Task 2: Create a virtual machine 
+# Task 2: Create a virtual machine 
 
 the command below will create a VM of name my-vm- in the region us-central11-a of machine type deafault that is
 n1-standard-1 with boot disk image Debian GNU/linux 9 (stretch). And also tagging the VM with an http tag for firewall rule.
 and the next comment allow http access.
 
-    gcloud compute instances create my-vm-1 --zone=us-central1-a --machine-type=ni-standard-1 --tags=http
+    gcloud compute instances create my-vm-2 --zone=us-central1-a --machine-type=ni-standard-1 --tags=http
 
     gcloud compute firewall-rule create default-allow-http --direction=INGRESS --priority=1000 --network=default \
     --action=ALLOW --rules=tcp:80 --source-ranges=0.0.0.0/0 --target-tags=http
 
 
 
-Task 3: Create another virtual machine
+# Task 3: Create another virtual machine
 
 First set the default zone to the one different from that of the VM with this command
 
@@ -48,23 +47,23 @@ To create a VM instance called my-vm-2 in that zone, execute this command:
 
 
 
-Task 4: Connect between VM instances
+# Task 4: Connect between VM instances
 
 SSH into th VM name my-vm-2 with the follow ssh command
 
     ssh my-vm-2
 
-Use the ping command to confirm that my-vm-2 can reach my-vm-1 over the network:
+Use the ping command to confirm that my-vm-2 can reach my-vm-2 over the network:
 
-    ping my-vm-1
+    ping my-vm-2
 
 press Ctrl+C to abort
 
-Use the ssh command to open a command prompt on my-vm-1:
+Use the ssh command to open a command prompt on my-vm-2:
 
-    ssh my-vm-1
+    ssh my-vm-2
 
-At the command prompt on my-vm-1, install the Nginx web server:
+At the command prompt on my-vm-2, install the Nginx web server:
 
     sudo apt-get install nginx-light -y
 
@@ -79,15 +78,15 @@ Hi from YOUR_NAME
 use Ctrl+O and Ctrl+X to save and exit
 
 
-Confirm that the web server is serving your new page. At the command prompt on my-vm-1, execute this command:
+Confirm that the web server is serving your new page. At the command prompt on my-vm-2, execute this command:
 
     curl http://localhost/
 
->>> exit
+    exit
 
-To confirm that my-vm-2 can reach the web server on my-vm-1, at the command prompt on my-vm-2, execute this command:
+To confirm that my-vm-2 can reach the web server on my-vm-2, at the command prompt on my-vm-2, execute this command:
 
-    curl http://my-vm-1/
+    curl http://my-vm-2/
 
 
-Congratulations!
+Congratulations!(Done)
