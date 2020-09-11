@@ -155,7 +155,7 @@ Return to your ssh session on bloghost. Use the nano text editor to edit index.p
 
 In the nano text editor, replace CLOUDSQLIP and DBPASSWORD with the Cloud SQL instance Public IP address and with the Cloud SQL database password that you defined above respectively
 
-safe and exit
+save and exit
 
 Restart the web server:
 
