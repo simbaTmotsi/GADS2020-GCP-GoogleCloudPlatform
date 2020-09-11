@@ -103,7 +103,7 @@ change your working directory to the document root of the web server:
 
 Use the nano text editor to edit a file called index.php:
 
->>>> sudo nano index.php
+    sudo nano index.php
 
 Paste the content below into the file:
 
@@ -171,7 +171,7 @@ since your already Upload an image of name my-excellent-blog.png in your bucket 
 
 so here should be the path to th image  “https://storage.googleapis.con/<project_id>/<storage_item_name>”
 
-so edith the index.php file again
+so edit the index.php file again
 
     sudo nano index.php
 
